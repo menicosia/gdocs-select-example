@@ -1,0 +1,22 @@
+{
+    "name": "Show selected text from a Google Doc",
+    "version": "1.0",
+    "description": "Show selected text from a Google Doc.",
+    "content_scripts": [
+        { "all_frames": true,
+          "js": ["googleDocsUtil.js", "receiver.js"],
+          "matches": ["<all_urls>"],
+          "run_at": "document_end"
+        }
+    ],
+    "permissions" : [
+        "tabs",
+        "declarativeContent",
+        "clipboardWrite",
+        "activeTab"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}
